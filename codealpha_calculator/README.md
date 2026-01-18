@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+touch README.md
+nano README.md
+
+>>>>>>> 669dfda (Finalize folder renames and README updates)
 # Calculator Application
 
 A simple calculator web application built as part of the **CodeAlpha tasks**.
@@ -28,4 +34,3 @@ https://calculator-27yea48ik-rhythms-projects-3d74ce4b.vercel.app
 
 ---
 
-## 📁 Project Structure
