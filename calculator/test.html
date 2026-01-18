@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Research Report: Expense Tracking Web App</title>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Research Report: Expense Tracking Web App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for scrollbar, if desired for a more premium look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: hsl(220, 15%, 15%);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: hsl(180, 50%, 35%);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: hsl(180, 70%, 45%);
+        }
+    </style>
+</head>
+<body class="bg-primary-bg text-text-primary antialiased font-body min-h-screen flex flex-col justify-between">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-bg': 'hsl(220, 15%, 12%)',
+                        'secondary-bg': 'hsl(220, 15%, 18%)',
+                        'accent': 'hsl(180, 70%, 50%)',
+                        'text-primary': 'hsl(210, 10%, 88%)',
+                        'text-secondary': 'hsl(210, 8%, 65%)',
+                        'border-color': 'hsl(220, 10%, 25%)',
+                        'highlight-bg': 'hsl(180, 20%, 20%)', /* For subtle background highlights */
+                    },
+                    fontFamily: {
+                        display: ['Inter', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+                        'neumorphic': '5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <header class="py-16 px-4 text-center border-b border-border-color bg-gradient-to-br from-primary-bg to-secondary-bg">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-display font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-300 pb-4 animate-fade-in-down">
+                Product Research Report
+            </h1>
+            <p class="text-xl md:text-2xl text-text-secondary font-body mt-2 animate-fade-in">
+                Expense Tracking Web App: Insights for Informed Decisions
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 flex-grow">
+        <!-- User Personas Section -->
+        <section class="mb-20">
+            <h2 class="text-4xl font-display font-bold text-accent mb-10 border-b border-border-color pb-4">User Personas</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Primary User Persona Card -->
+                <div class="bg-secondary-bg p-8 rounded-xl shadow-lg border border-border-color transform hover:scale-105 transition-all duration-300 ease-in-out">
+                    <h3 class="text-3xl font-display font-semibold text-text-primary mb-4 pb-2 border-b border-border-color">The Overwhelmed Seeker</h3>
+                    <p class="text-text-secondary mb-6 leading-relaxed">
+                        This persona desires calm and confidence about money, seeking a simple way to track spending and uncover patterns without feeling overwhelmed.
+                    </p>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-display font-medium text-accent mb-2">Behaviors</h4>
+                            <ul class="list-disc list-inside space-y-2 text-text-secondary pl-2">
+                                <li>Pays with quick swipes, guesses monthly spending.</li>
+                                <li>Abandons manual tracking due to tedium.</li>
+                                <li>Makes impulse purchases, frequently checks bank balance without connecting transactions to patterns.</li>
+                                <li>Knows they overspend on certain things but can't pinpoint.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-display font-medium text-accent mb-2">Motivations</h4>
+                            <ul class="list-disc list-inside space-y-2 text-text-secondary pl-2">
+                                <li>Desires calm and confidence about money.</li>
+                                <li>Wants a simple way to see where cash goes.</li>
+                                <li>Hopes to uncover triggers for regrettable spending.</li>
+                                <li>Wishes for easy ways to spend less without missing out, seeks clarity without overwhelming numbers.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-display font-medium text-accent mb-2">Goals</h4>
+                            <ul class="list-disc list-inside space-y-2 text-text-secondary pl-2">
+                                <li>Gain a clear picture of spending patterns.</li>
+                                <li>Easily identify large expenses.</li>
+                                <li>Develop responsibility for purchases, move past "money just disappears."</li>
+                                <li>Understand spending habit evolution.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary User Persona Card -->
+                <div class="bg-secondary-bg p-8 rounded-xl shadow-lg border border-border-color transform hover:scale-105 transition-all duration-300 ease-in-out">
+                    <h3 class="text-3xl font-display font-semibold text-text-primary mb-4 pb-2 border-b border-border-color">The Thoughtful Planner</h3>
+                    <p class="text-text-secondary mb-6 leading-relaxed">
+                        This persona has a good handle on essentials but seeks deeper insights into discretionary spending and subtle habit shifts to align spending with aspirations.
+                    </p>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xl font-display font-medium text-accent mb-2">Behaviors</h4>
+                            <ul class="list-disc list-inside space-y-2 text-text-secondary pl-2">
+                                <li>Good handle on essentials but unsure about discretionary spending nuances.</li>
+                                <li>Manages regular payments but questions flow of larger purchases.</li>
+                                <li>Mentally notes significant expenses but forgets timing/impact.</li>
+                                <li>Reviews spending periodically but wishes for easier spotting of unusual activity or increasing trends.</li>
+                                <li>Finds manual analysis time-consuming.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-display font-medium text-accent mb-2">Motivations</h4>
+                            <ul class="list-disc list-inside space-y-2 text-text-secondary pl-2">
+                                <li>Wants spending to align with aspirations/values.</li>
+                                <li>Seks easy verification of large purchases signaling new patterns.</li>
+                                <li>Desires understanding of spending consistency changes, wants clear insights into subtle habit shifts.</li>
+                                <li>Motivated to find subtle spending optimizations.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-display font-medium text-accent mb-2">Goals</h4>
+                            <ul class="list-disc list-inside space-y-2 text-text-secondary pl-2">
+                                <li>Effortlessly identify unusual/large expenses.</li>
+                                <li>Gain visual understanding of spending habit evolution.</li>
+                                <li>Easily see category spending increases/decreases.</li>
+                                <li>Feel assured spending reflects priorities, understand "why" behind trends without complex calculations.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Pain Statements Section -->
+        <section class="mb-20">
+            <h2 class="text-4xl font-display font-bold text-accent mb-10 border-b border-border-color pb-4">Key Pain Statements</h2>
+            <ul class="list-disc list-outside space-y-6 text-text-primary text-lg pl-8">
+                <li class="relative group">
+                    <span class="absolute -left-8 top-1 text-accent text-xl transition-transform duration-200 group-hover:scale-125 group-hover:rotate-6">&#8226;</span>
+                    <blockquote class="italic border-l-4 border-accent pl-4">"I feel like my money just disappears every month, and I'm always surprised by how little is left at the end."</blockquote>
+                </li>
+                <li class="relative group">
+                    <span class="absolute -left-8 top-1 text-accent text-xl transition-transform duration-200 group-hover:scale-125 group-hover:rotate-6">&#8226;</span>
+                    <blockquote class="italic border-l-4 border-accent pl-4">"It's so annoying and time-consuming to manually keep track of every little thing I buy, so I usually just stop trying."</blockquote>
+                </li>
+                <li class="relative group">
+                    <span class="absolute -left-8 top-1 text-accent text-xl transition-transform duration-200 group-hover:scale-125 group-hover:rotate-6">&#8226;</span>
+                    <blockquote class="italic border-l-4 border-accent pl-4">"Even when I do track my spending, I don't get any clear insights or learn anything useful about my habits."</blockquote>
+                </li>
+                <li class="relative group">
+                    <span class="absolute -left-8 top-1 text-accent text-xl transition-transform duration-200 group-hover:scale-125 group-hover:rotate-6">&#8226;</span>
+                    <blockquote class="italic border-l-4 border-accent pl-4">"It's really hard to quickly spot if I'm spending more than usual on something or if my habits are subtly changing."</blockquote>
+                </li>
+                <li class="relative group">
+                    <span class="absolute -left-8 top-1 text-accent text-xl transition-transform duration-200 group-hover:scale-125 group-hover:rotate-6">&#8226;</span>
+                    <blockquote class="italic border-l-4 border-accent pl-4">"All the numbers and complicated charts just make me feel more confused about my spending, not clearer."</blockquote>
+                </li>
+                <li class="relative group">
+                    <span class="absolute -left-8 top-1 text-accent text-xl transition-transform duration-200 group-hover:scale-125 group-hover:rotate-6">&#8226;</span>
+                    <blockquote class="italic border-l-4 border-accent pl-4">"I often buy things impulsively and later regret it, but I don't know what makes me do it."</blockquote>
+                </li>
+                <li class="relative group">
+                    <span class="absolute -left-8 top-1 text-accent text-xl transition-transform duration-200 group-hover:scale-125 group-hover:rotate-6">&#8226;</span>
+                    <blockquote class="italic border-l-4 border-accent pl-4">"I feel like I have no real control over my daily spending, and my purchases don't always reflect what's important to me."</blockquote>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Jobs-to-be-Done Framework Section -->
+        <section class="mb-20">
+            <h2 class="text-4xl font-display font-bold text-accent mb-10 border-b border-border-color pb-4">Jobs-to-be-Done Framework</h2>
+            <div class="space-y-12">
+                <div class="bg-secondary-bg p-6 rounded-lg shadow-md border border-border-color hover:shadow-xl transition-shadow duration-300">
+                    <p class="text-xl font-semibold text-text-primary mb-3">
+                        <strong class="text-accent">1.</strong> When I spend my money, I want to clearly understand where it goes, so I can avoid feeling surprised by its disappearance.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                        <li><strong class="text-accent">Functional:</strong> Accurately know the destination of funds.</li>
+                        <li><strong class="text-accent">Emotional:</strong> Feel informed, avoid anxiety and surprise.</li>
+                    </ul>
+                </div>
+                <div class="bg-secondary-bg p-6 rounded-lg shadow-md border border-border-color hover:shadow-xl transition-shadow duration-300">
+                    <p class="text-xl font-semibold text-text-primary mb-3">
+                        <strong class="text-accent">2.</strong> When I review my spending, I want to easily identify patterns and significant changes in my habits, so I can catch unusual activity or evolving trends.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                        <li><strong class="text-accent">Functional:</strong> Detect recurring behaviors and deviations.</li>
+                        <li><strong class="text-accent">Emotional:</strong> Feel vigilant and proactive about my financial state.</li>
+                    </ul>
+                </div>
+                <div class="bg-secondary-bg p-6 rounded-lg shadow-md border border-border-color hover:shadow-xl transition-shadow duration-300">
+                    <p class="text-xl font-semibold text-text-primary mb-3">
+                        <strong class="text-accent">3.</strong> When I look at my spending information, I want it presented simply and clearly, so I can gain useful insights without feeling overwhelmed or confused.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                        <li><strong class="text-accent">Functional:</strong> Process information effectively.</li>
+                        <li><strong class="text-accent">Emotional:</strong> Feel competent, gain peace of mind, reduce cognitive load.</li>
+                    </ul>
+                </div>
+                <div class="bg-secondary-bg p-6 rounded-lg shadow-md border border-border-color hover:shadow-xl transition-shadow duration-300">
+                    <p class="text-xl font-semibold text-text-primary mb-3">
+                        <strong class="text-accent">4.</strong> When I consider a purchase, I want to feel confident that my spending aligns with my priorities and goals, so I can maintain a sense of control over my financial life.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                        <li><strong class="text-accent">Functional:</strong> Guide spending decisions.</li>
+                        <li><strong class="text-accent">Emotional:</strong> Feel empowered, responsible, and aligned with my values.</li>
+                        <li><strong class="text-accent">Social:</strong> Reflect desired self-image through intentional choices.</li>
+                    </ul>
+                </div>
+                <div class="bg-secondary-bg p-6 rounded-lg shadow-md border border-border-color hover:shadow-xl transition-shadow duration-300">
+                    <p class="text-xl font-semibold text-text-primary mb-3">
+                        <strong class="text-accent">5.</strong> When I manage my personal finances, I want to identify opportunities to make my money go further, so I can make progress towards my financial future.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                        <li><strong class="text-accent">Functional:</strong> Discover areas for efficiency.</li>
+                        <li><strong class="text-accent">Emotional:</strong> Feel hopeful, motivated, and secure about future prospects.</li>
+                    </ul>
+                </div>
+                <div class="bg-secondary-bg p-6 rounded-lg shadow-md border border-border-color hover:shadow-xl transition-shadow duration-300">
+                    <p class="text-xl font-semibold text-text-primary mb-3">
+                        <strong class="text-accent">6.</strong> When I reflect on my spending, I want to understand what drives my financial decisions, so I can make more deliberate choices and minimize regret.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                        <li><strong class="text-accent">Functional:</strong> Uncover underlying motivations.</li>
+                        <li><strong class="text-accent">Emotional:</strong> Gain self-awareness, reduce guilt, foster intentionality.</li>
+                    </ul>
+                </div>
+                <div class="bg-secondary-bg p-6 rounded-lg shadow-md border border-border-color hover:shadow-xl transition-shadow duration-300">
+                    <p class="text-xl font-semibold text-text-primary mb-3">
+                        <strong class="text-accent">7.</strong> When I track my spending, I want the process to be straightforward and effortless, so it doesn't become a burden I abandon.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                        <li><strong class="text-accent">Functional:</strong> Record expenditures with minimal effort.</li>
+                        <li><strong class="text-accent">Emotional:</strong> Feel capable, less annoyed, and sustained in my tracking efforts.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Interview Questions Section -->
+        <section class="mb-20">
+            <h2 class="text-4xl font-display font-bold text-accent mb-10 border-b border-border-color pb-4">User Interview Questions</h2>
+            <ol class="list-decimal list-outside space-y-4 text-text-primary text-lg pl-8">
+                <li>Can you describe a time when you felt uncertain about where your money was going each month?</li>
+                <li>What does it truly mean to you to understand your spending habits?</li>
+                <li>When you've tried to keep tabs on your money in the past, what did that process look like, and what made it challenging?</li>
+                <li>Can you recall a time when you wished you had noticed a change in your spending sooner, and why was that important?</li>
+                <li>How does it feel when your spending choices don't quite align with what you truly value or intended?</li>
+                <li>Imagine you have a clear picture of where your money goes. What difference would that make in your daily life or decisions?</li>
+                <li>When you look at your past purchases, how do you typically try to make sense of different types of spending?</li>
+                <li>What typically causes you to feel confused or overwhelmed when trying to understand your spending?</li>
+                <li>What kind of information or understanding about your money would genuinely help you make different choices?</li>
+                <li>When do you typically feel the urge to check in on where your money stands, and what prompts that feeling?</li>
+                <li>Can you tell me about a recent purchase that made you pause or wonder about its impact on your overall spending?</li>
+                <li>How important is it for you to see how your spending patterns change over longer periods, like across different months or seasons?</li>
+            </ol>
+        </section>
+
+        <!-- Product-Market Fit Signals Section -->
+        <section class="mb-20">
+            <h2 class="text-4xl font-display font-bold text-accent mb-10 border-b border-border-color pb-4">Product-Market Fit Signals</h2>
+
+            <div class="space-y-12">
+                <!-- Signal: Core Insight Generation & Actionability -->
+                <div class="bg-secondary-bg p-6 rounded-lg shadow-md border border-border-color hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-display font-semibold text-text-primary mb-4 border-b border-border-color pb-2">Core Insight Generation & Actionability</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-lg font-medium text-accent mb-2"><strong class="text-green-400">Strong PMF:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                                <li>Users articulate specific behavioral changes attributed to app insights (e.g., adjusting budgets based on "unusual expense detection," modifying weekday spending after "weekday vs. weekend comparisons").</li>
+                                <li>They move from guessing to confident, informed decisions.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-lg font-medium text-red-400 mb-2">Weak PMF:</p>
+                            <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                                <li>Users acknowledge charts/messages but don't reference them for financial decisions or habit changes.</li>
+                                <li>They continue to express surprise or lack of understanding, indicating insights aren't actionable.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signal: Effortless Tracking & Sustained Engagement -->
+                <div class="bg-secondary-bg p-6 rounded-lg shadow-md border border-border-color hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-display font-semibold text-text-primary mb-4 border-b border-border-color pb-2">Effortless Tracking & Sustained Engagement</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-lg font-medium text-accent mb-2"><strong class="text-green-400">Strong PMF:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                                <li>Users consistently log expenses, finding the process integrated and straightforward, not a burden.</li>
+                                <li>Expense input/review is a natural part of their routine, minimizing friction.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-lg font-medium text-red-400 mb-2">Weak PMF:</p>
+                            <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                                <li>Users report initial engagement but abandon regular logging within weeks, citing the ongoing effort of manual entry/categorization as too time-consuming or cumbersome.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signal: Perceived Control & Reduced Financial Anxiety -->
+                <div class="bg-secondary-bg p-6 rounded-lg shadow-md border border-border-color hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-display font-semibold text-text-primary mb-4 border-b border-border-color pb-2">Perceived Control & Reduced Financial Anxiety</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-lg font-medium text-accent mb-2"><strong class="text-green-400">Strong PMF:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                                <li>Users express increased control and confidence, reporting reduced anxiety/surprise.</li>
+                                <li>They make more intentional purchases and actively manage money, rather than feeling it "just disappears."</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-lg font-medium text-red-400 mb-2">Weak PMF:</p>
+                            <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                                <li>Users continue to voice feelings of being overwhelmed, lacking control, or being surprised by spending, despite app use.</li>
+                                <li>No significant shift in emotional relationship with money or reduced anxiety is reported.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signal: Clarity and Comprehension of Financial Data -->
+                <div class="bg-secondary-bg p-6 rounded-lg shadow-md border border-border-color hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-display font-semibold text-text-primary mb-4 border-b border-border-color pb-2">Clarity and Comprehension of Financial Data</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-lg font-medium text-accent mb-2"><strong class="text-green-400">Strong PMF:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                                <li>Users praise the clean dashboard and "short insight messages" for simplifying complex data.</li>
+                                <li>They express relief from cognitive overload and confidently explain spending patterns, demonstrating clear understanding.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-lg font-medium text-red-400 mb-2">Weak PMF:</p>
+                            <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                                <li>Users find charts confusing or "insight messages" unhelpful/difficult to interpret.</li>
+                                <li>They may resort to their own calculations, indicating the app's presentation fails to deliver clarity.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signal: Value Perception Leading to Behavioral Adjustment -->
+                <div class="bg-secondary-bg p-6 rounded-lg shadow-md border border-border-color hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-display font-semibold text-text-primary mb-4 border-b border-border-color pb-2">Value Perception Leading to Behavioral Adjustment</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-lg font-medium text-accent mb-2"><strong class="text-green-400">Strong PMF:</strong></p>
+                            <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                                <li>Users proactively use the app to reflect on past spending and plan future purchases, citing "unusual expenses" or "trends across days/months" as key to deliberate choices.</li>
+                                <li>They use the app to avoid regret and align spending with priorities.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-lg font-medium text-red-400 mb-2">Weak PMF:</p>
+                            <ul class="list-disc list-inside space-y-1 text-text-secondary pl-4">
+                                <li>Users primarily use the app as a passive record-keeping tool, not actively engaging analytical features to guide future spending or uncover decision drivers.</li>
+                                <li>They continue to report impulsive purchases and regret.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Build Guidance Section -->
+        <section>
+            <h2 class="text-4xl font-display font-bold text-accent mb-10 border-b border-border-color pb-4">Build Guidance</h2>
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Build Recommendation -->
+                <div class="bg-highlight-bg p-8 rounded-xl shadow-lg border border-accent-300/40 transform hover:-translate-y-1 transition-transform duration-300 ease-in-out">
+                    <h3 class="text-3xl font-display font-semibold text-green-400 mb-4 pb-2 border-b border-accent/50">Build Recommendation</h3>
+                    <p class="text-text-primary text-lg leading-relaxed">
+                        Proceed with development, prioritizing the unique delivery of personalized, statistically-derived insights that translate into actionable guidance. The market has a clear need for apps moving beyond basic tracking to empower users with financial understanding and control, reducing anxiety and regret. Focus on seamlessly integrating the core differentiation—converting complex data into simple, digestible, prescriptive advice—into an effortless tracking experience. This will address key pain points of lacking actionable insights and feeling overwhelmed, fostering sustained engagement and financial confidence.
+                    </p>
+                </div>
+
+                <!-- Don't Build Recommendation -->
+                <div class="bg-secondary-bg p-8 rounded-xl shadow-lg border border-border-color transform hover:-translate-y-1 transition-transform duration-300 ease-in-out">
+                    <h3 class="text-3xl font-display font-semibold text-red-400 mb-4 pb-2 border-b border-border-color">Don't Build Recommendation</h3>
+                    <p class="text-text-secondary text-lg leading-relaxed">
+                        Do not proceed if the core value proposition of "actionable financial insight" cannot be demonstrably differentiated and delivered in a way that <em class="text-red-300">unambiguously</em> leads to user behavioral change and significant reduction in financial anxiety. The market is competitive, and user abandonment is high when tracking is tedious or insights are not genuinely useful/clear. If the statistical analysis primarily results in more data or complex charts without simplifying financial understanding or enabling effortless data input, the product will fail to overcome existing pain points and struggle to establish product-market fit.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+Product Scout-saved.html
+32 KB
